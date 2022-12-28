@@ -1,6 +1,6 @@
 # Rouge Highlighter Online
 
-Paste in the browser the code you want to highlight, select the language and get back the code highlighted. No eternal css needed!
+Paste in the browser the code you want to highlight, select the language and get back the code highlighted. No external css needed!
 
 ## To start using Rouge Highlighter Online:
 
