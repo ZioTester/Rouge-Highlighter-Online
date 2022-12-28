@@ -1,0 +1,12 @@
+<h1>Inserisci il codice</h1>
+<%= form_tag '/create' do %>
+  <%= label_tag :lang, "Seleziona il linguaggio:" %>
+  <%= select_tag "lang", options_for_select([ "cpp", "ini", "yaml", "php", "javascript" ], "cpp") %>
+  <br />&nbsp;<br />
+  <%= label_tag :codice, "inserisci il codice:" %>
+  <br />
+  <%= text_area_tag :codice, '', :size =>"80x20" %>
+  <br />
+  
+  <%= submit_tag "Invia" %>
+<% end %>
