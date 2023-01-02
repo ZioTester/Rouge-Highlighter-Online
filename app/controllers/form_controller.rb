@@ -1,5 +1,8 @@
 class FormController < ApplicationController
   def index
+    @paste_active = "active"
+    @preview_enabled = "disabled"
+    @copy_enabled = "disabled"
 
   end
 
@@ -21,11 +24,14 @@ class FormController < ApplicationController
   end
 
   def encode    
+
+    @preview_active = "active"
+
     @file_name = params[:file_name]
     @lang = params[:lang]
     @theme = params[:theme]
     if File.exist?("tmp/uploads/" + @file_name)
-      source = File.read("tmp/uploads/" + @file_name)
+      @source = File.read("tmp/uploads/" + @file_name)
 
       require 'rouge'
       formatter = Rouge::Formatters::HTMLInline.new(@theme)
@@ -66,9 +72,9 @@ class FormController < ApplicationController
       elsif @theme == 'tulip'
         @first_block = '<div style="overflow:auto;position: relative;margin-bottom: 1em;background: #231529;color: #FFFFFF;font-family: Monaco,Consolas,monospace;font-size: 1.0em;line-height: 1.8;border-radius:4px;"><pre>'
       end
-      @second_block = formatter.format(lexer.lex(source))
+      @second_block = formatter.format(lexer.lex(@source))
       @final_block = '</pre></div>'
-      #File.delete("tmp/uploads/" + @file_name) if File.exist?(@file_name)
+      #File.delete("tmp/uploads/" + @file_name) if File.exist?("tmp/uploads/" + @file_name)
     else 
       redirect_to controller: 'form', action: "index"
     end
