@@ -1,12 +1,22 @@
-<h1>Codice da copiare:</h1>
+<h1>Rouge HighLighter Online</h1>
 <h3><a href="/">Back</a></h3>
 
+<%= form_tag '/change' do %>
+    <%= label_tag :theme, "Change theme:" %>
+    <%= select_tag "theme", options_for_select([ "base16.light", "base16.dark", "base16.monokai.light", "base16.monokai.dark", "base16.solarized.light", "base16.solarized.dark", "colorful", "github", "gruvbox.light", "gruvbox.dark", "igorpro", "molokai", "monokai", "monokai.sublime", "pastie", "thankful_eyes", "tulip"], @theme) %>
+    <%= hidden_field_tag :file_name, @file_name %>
+    <%= hidden_field_tag :lang, @lang %>
+    <%= submit_tag "Send" %>
+<% end %>
+<br />&nbsp;<br />
 <textarea rows="20" cols="80">
 <%= @first_block %>
 <%= @second_block %>
 <%= @final_block %>
 </textarea>
-<h1>Output:</h1>
-<%= raw(@first_block) %>
-<%= raw(@second_block) %>
-<%= raw(@final_block) %>
+<h1>Selected theme: <%= @theme %></h1>
+<div style="display:block;width:800px;">
+    <%= raw(@first_block) %>
+    <%= raw(@second_block) %>
+    <%= raw(@final_block) %>
+</div>

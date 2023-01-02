@@ -28,6 +28,9 @@
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
+/tmp/uploads/*
+!/tmp/uploads/
+!/tmp/uploads/.keep
 
 /public/assets
 

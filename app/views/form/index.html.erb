@@ -1,12 +1,14 @@
-<h1>Inserisci il codice</h1>
+<h1>Rouge HighLighter Online</h1>
 <%= form_tag '/create' do %>
-  <%= label_tag :lang, "Seleziona il linguaggio:" %>
-  <%= select_tag "lang", options_for_select([ "cpp", "ini", "yaml", "php", "javascript" ], "cpp") %>
+  <%= label_tag :lang, "Select the language:" %>
+  <%= select_tag "lang", options_for_select([ "cpp", "ini", "yaml", "php", "javascript", "shell", "json", "xml" ], "cpp") %>
   <br />&nbsp;<br />
-  <%= label_tag :codice, "inserisci il codice:" %>
+  <%= label_tag :theme, "Select the theme:" %>
+  <%= select_tag "theme", options_for_select([ "base16.light", "base16.dark", "base16.monokai.light", "base16.monokai.dark", "base16.solarized.light", "base16.solarized.dark", "colorful", "github", "gruvbox.light", "gruvbox.dark", "igorpro", "molokai", "monokai", "monokai.sublime", "pastie", "thankful_eyes", "tulip"]) %>
+  <br />&nbsp;<br />
+  <%= label_tag :codice, "Paste the code to highlight:" %>
   <br />
   <%= text_area_tag :codice, '', :size =>"80x20" %>
-  <br />
-  
-  <%= submit_tag "Invia" %>
+  <br />  
+  <%= submit_tag "Send" %>
 <% end %>
