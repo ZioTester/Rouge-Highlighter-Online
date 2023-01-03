@@ -17,13 +17,6 @@ class FormController < ApplicationController
     redirect_to controller: 'form', action: "encode" , file_name: @file_name, lang: @lang, theme: @theme
   end
 
-  def change
-    @file_name = params[:file_name]
-    @lang = params[:lang]
-    @theme = params[:theme]
-    redirect_to controller: 'form', action: "encode" , file_name: @file_name, lang: @lang, theme: @theme
-  end
-
   def encode    
 
     @preview_active = "active"

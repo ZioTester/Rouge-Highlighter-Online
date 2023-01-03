@@ -12,17 +12,10 @@
         <%= submit_tag "Change theme", :class =>"w-100 btn btn-lg btn-primary" %>
     <% end %>
     <br />
-    <div style="display:block;width:100%;">
-        <%= raw(@first_block) %>
-        <%= raw(@second_block) %>
-        <%= raw(@final_block) %>
-    </div>
+    <div style="display:block;width:100%;"><%= raw(@first_block) %><%= raw(@second_block) %><%= raw(@final_block) %></div>
   </div>
   <div class="tab-pane fade" id="copy-tab-pane" role="tabpanel" aria-labelledby="copy-tab" style="padding:100px" tabindex="0">
-    <textarea rows="20" class="form-control">
-        <%= @first_block %>
-        <%= @second_block %>
-        <%= @final_block %>
+    <textarea rows="20" class="form-control"><%= @first_block %><%= @second_block %><%= @final_block %>
     </textarea>  
   </div>
 </div>
