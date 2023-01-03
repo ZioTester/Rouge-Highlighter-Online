@@ -1,8 +1,12 @@
 # Rouge Highlighter Online
 
-Paste in the browser the code you want to highlight, select the language and get back the code highlighted. No external css needed!
+Paste in the browser the code you want to highlight, select language and theme and get back the code highlighted. No external css needed!
 
-## To start using Rouge Highlighter Online:
+Based on Rouge Ruby syntax highlighter: https://github.com/rouge-ruby/rouge
+
+## You can use it online here: https://rouge.fly.dev/
+
+### Or you can use it on your system:
 
 * clone the repo
 * install dependencies with:
@@ -10,12 +14,7 @@ Paste in the browser the code you want to highlight, select the language and get
 bundle install
 ```
 
-* change the domain in config/application.rb:
-```
-Rails.application.config.hosts << "domain.name"
-```
-
 * start the app:
 ```
-bin/rails server -b domain.name
+puma
 ```
