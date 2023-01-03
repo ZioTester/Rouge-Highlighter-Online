@@ -15,16 +15,19 @@
   <main class="container">
     <div class="bg-light p-2 rounded">
     <h1>Rouge HighLighter Online</h1>
-    <br />
+    <hr /><br />
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link <%= @paste_active %>" id="paste-tab" data-bs-toggle="tab" data-bs-target="#paste-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">1) Paste</button>
+          <button class="nav-link <%= @home_active %>" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Info</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link <%= @preview_active %>" id="preview-tab" data-bs-toggle="tab" data-bs-target="#preview-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false" <%= @preview_enabled %>>2) Preview</button>
+          <button class="nav-link" id="paste-tab" data-bs-toggle="tab" data-bs-target="#paste-tab-pane" type="button" role="tab" aria-controls="paste-tab-pane" aria-selected="true">Start Here!</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link <%= @copy_active %>" id="copy-tab" data-bs-toggle="tab" data-bs-target="#copy-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false" <%= @copy_enabled %>>3) Copy!</button>
+          <button class="nav-link <%= @preview_active %>" id="preview-tab" data-bs-toggle="tab" data-bs-target="#preview-tab-pane" type="button" role="tab" aria-controls="preview-tab-pane" aria-selected="false" <%= @preview_enabled %>>Preview</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="copy-tab" data-bs-toggle="tab" data-bs-target="#copy-tab-pane" type="button" role="tab" aria-controls="copy-tab-pane" aria-selected="false" <%= @copy_enabled %>>Copy the result!</button>
         </li>
       </ul>
       

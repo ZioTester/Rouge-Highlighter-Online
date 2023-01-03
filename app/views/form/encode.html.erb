@@ -1,24 +1,25 @@
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade" id="paste-tab-pane" role="tabpanel" aria-labelledby="paste-tab" tabindex="0">
-    <%= render 'paste_form' %>
-  </div>
-  <div class="tab-pane fade show active" id="preview-tab-pane" role="tabpanel" aria-labelledby="preview-tab" tabindex="0">
-    <%= form_tag '/change' do %>
+  <%= render 'info_tab' %>
+  <%= render 'paste_tab' %>
+  <div class="tab-pane fade show active" id="preview-tab-pane" role="tabpanel" aria-labelledby="preview-tab" style="padding:100px" tabindex="0">
+    <b>Selected theme: <%= @theme %></b>
+    <%= form_tag '/create' do %>
         <%= label_tag :theme, "Change theme:" %>
-        <%= select_tag "theme", options_for_select([ "base16.light", "base16.dark", "base16.monokai.light", "base16.monokai.dark", "base16.solarized.light", "base16.solarized.dark", "colorful", "github", "gruvbox.light", "gruvbox.dark", "igorpro", "molokai", "monokai", "monokai.sublime", "pastie", "thankful_eyes", "tulip"], @theme) %>
-        <%= hidden_field_tag :file_name, @file_name %>
+        <%= render 'theme_select' %>
+        <%= hidden_field_tag :codice, @source %>
         <%= hidden_field_tag :lang, @lang %>
-        <%= submit_tag "Send" %>
+        <br />
+        <%= submit_tag "Change theme", :class =>"w-100 btn btn-lg btn-primary" %>
     <% end %>
-    <h1>Selected theme: <%= @theme %></h1>
-    <div style="display:block;width:800px;">
+    <br />
+    <div style="display:block;width:100%;">
         <%= raw(@first_block) %>
         <%= raw(@second_block) %>
         <%= raw(@final_block) %>
     </div>
   </div>
-  <div class="tab-pane fade" id="copy-tab-pane" role="tabpanel" aria-labelledby="copy-tab" tabindex="0">
-    <textarea rows="20" cols="80">
+  <div class="tab-pane fade" id="copy-tab-pane" role="tabpanel" aria-labelledby="copy-tab" style="padding:100px" tabindex="0">
+    <textarea rows="20" class="form-control">
         <%= @first_block %>
         <%= @second_block %>
         <%= @final_block %>

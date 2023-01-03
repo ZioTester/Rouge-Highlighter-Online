@@ -1,0 +1,15 @@
+<div class="tab-pane fade" id="paste-tab-pane" role="tabpanel" aria-labelledby="paste-tab" style="padding:100px" tabindex="0">
+    <%= form_tag '/create' do %>
+        <%= label_tag :lang, "Select the language:" %>
+        <%= render 'language_select' %>
+        <br />
+        <%= label_tag :theme, "Select the theme:" %>
+        <%= render 'theme_select' %>
+        <br />
+        <%= label_tag :codice, "Paste the code to highlight:" %>
+        <%= text_area_tag :codice, @source, :class =>"form-control", rows: 20 %>
+        <br />
+        <%= submit_tag "Highlight the code!", :class =>"w-100 btn btn-lg btn-primary" %>
+        <br />&nbsp;<br />
+    <% end %>
+</div>
