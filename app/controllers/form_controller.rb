@@ -83,8 +83,11 @@ class FormController < ApplicationController
         @color = "#FFFFFF"
         @background = "#231529"
       end
-      @first_block = '<div style="overflow:auto;position: relative;margin-bottom: 1em;background: ' + @background + ';color: ' + @color + ';font-family: Monaco,Consolas,monospace;font-size: 1.0em;line-height: 1.8;border-radius:4px;"><pre style="background: ' + @background + ';border: none;">'
-      @second_block = formatter.format(lexer.lex(@source))
+      @first_block = '<div style="overflow:auto;position:relative;margin-bottom: 1em;background:' + @background + ';color:' + @color + ';font-family:Monaco,Consolas,monospace;font-size:1.0em;line-height:1.8;border-radius:4px;"><pre style="background:' + @background + ';border:none;">'
+      txt_formatted = formatter.format(lexer.lex(@source))
+      txt_formatted.gsub! ': ', ':'
+      #puts txt_formatted
+      @second_block = txt_formatted
       @final_block = '</pre></div>'
       File.delete("tmp/uploads/" + @file_name) if File.exist?("tmp/uploads/" + @file_name)
     else 
